@@ -8,57 +8,64 @@
 
     <TextView
         android:id="@+id/celsius"
-        android:layout_width="129dp"
-        android:layout_height="123dp"
+        android:layout_width="211dp"
+        android:layout_height="114dp"
         android:text="@string/celsius_button"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.174" />
+        app:layout_constraintVertical_bias="0.173" />
 
     <EditText
         android:id="@+id/celsiustemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@null"
         android:text="@string/celsius_temp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.384" />
-
-    <TextView
-        android:id="@+id/fahrenheit"
-        android:layout_width="127dp"
-        android:layout_height="143dp"
-        android:text="@string/fahrenheit_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.681" />
-
-    <EditText
-        android:id="@+id/fahrenheittemp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/fahrenheit_temp"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.686" />
+        app:layout_constraintVertical_bias="0.319" />
+
+    <TextView
+        android:id="@+id/fahrenheit"
+        android:layout_width="318dp"
+        android:layout_height="149dp"
+        android:text="@string/fahrenheit_button"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.204"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.591" />
+
+    <EditText
+        android:id="@+id/fahrenheittemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:text="@string/fahrenheit_temp"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.713" />
 
     <EditText
         android:id="@+id/interestingmessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/interesting_message"
+        android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -70,25 +77,25 @@
         android:id="@+id/fahrenheitseekbar"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:max="212"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.614"
-        android:max="212"/>
+        app:layout_constraintVertical_bias="0.582" />
 
     <SeekBar
         android:id="@+id/celsiusseekbar"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:max="100"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.273"
-        android:max="100"/>
+        app:layout_constraintVertical_bias="0.228" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

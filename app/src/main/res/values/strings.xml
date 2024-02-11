@@ -6,4 +6,6 @@
     <string name="celsius_temp">0.0</string>
     <string name="interesting_message">Interesting Message</string>
     <string name="degree_string">.0°</string>
+    <string name="warmer_message">I wish it were warmer</string>
+    <string name="colder_message">I wish it were colder</string>
 </resources>

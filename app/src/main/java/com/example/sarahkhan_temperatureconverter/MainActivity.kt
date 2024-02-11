@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         val seekBarFahrenheit: SeekBar = findViewById(R.id.fahrenheitseekbar)
         val celsiustemp: EditText = findViewById(R.id.celsiustemp)
         val fahrenheittemp: EditText = findViewById(R.id.fahrenheittemp)
+        val message: EditText = findViewById(R.id.interestingmessage)
 
         //Set the initial positions of the bars
         seekBarCelsius.progress = 0
@@ -27,6 +28,12 @@ class MainActivity : AppCompatActivity() {
                     seekBarFahrenheit.progress = fahrenheit
                     celsiustemp.setText(progress.toString() + ".00°")
                     fahrenheittemp.setText(fahrenheit.toString() + ".00°")
+
+                    if (progress <= 20) {
+                        message.setText(R.string.warmer_message)
+                    } else {
+                        message.setText(R.string.colder_message)
+                    }
                 }
             }
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
@@ -36,14 +43,17 @@ class MainActivity : AppCompatActivity() {
         seekBarFahrenheit.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 if (fromUser) {
-                    if (progress < 32) {
-                        seekBar?.progress = 32
-                        return
-                    }
+
                     val celsius = (progress - 32) * 5 / 9
                     seekBarCelsius.progress = celsius
                     fahrenheittemp.setText(progress.toString() + ".00°")
                     celsiustemp.setText(celsius.toString() + ".00°")
+
+                    if (celsius <= 20) {
+                        message.setText(R.string.warmer_message)
+                    } else {
+                        message.setText(R.string.colder_message)
+                    }
 
                 }
             }

@@ -43,7 +43,10 @@ class MainActivity : AppCompatActivity() {
         seekBarFahrenheit.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 if (fromUser) {
-
+                    if (progress < 32) {
+                        seekBar?.progress = 32
+                        return
+                    }
                     val celsius = (progress - 32) * 5 / 9
                     seekBarCelsius.progress = celsius
                     fahrenheittemp.setText(progress.toString() + ".00°")

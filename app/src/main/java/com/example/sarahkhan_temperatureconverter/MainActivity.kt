@@ -24,15 +24,18 @@ class MainActivity : AppCompatActivity() {
         seekBarCelsius.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 if (fromUser) {
-                    val fahrenheit = (progress * 9 / 5) + 32
-                    seekBarFahrenheit.progress = fahrenheit
-                    celsiustemp.setText(progress.toString() + ".00°")
-                    fahrenheittemp.setText(fahrenheit.toString() + ".00°")
 
-                    if (progress <= 20) {
-                        message.setText(R.string.warmer_message)
-                    } else {
-                        message.setText(R.string.colder_message)
+                    if(progress > 0) {
+                        val fahrenheit = (progress * 9 / 5) + 32
+                        seekBarFahrenheit.progress = fahrenheit
+                        celsiustemp.setText(progress.toString() + ".00°")
+                        fahrenheittemp.setText(fahrenheit.toString() + ".00°")
+
+                        if (progress <= 20) {
+                            message.setText(R.string.warmer_message)
+                        } else {
+                            message.setText(R.string.colder_message)
+                        }
                     }
                 }
             }
@@ -43,25 +46,34 @@ class MainActivity : AppCompatActivity() {
         seekBarFahrenheit.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 if (fromUser) {
-                    if (progress < 32) {
-                        seekBar?.progress = 32
-                        return
-                    }
-                    val celsius = (progress - 32) * 5 / 9
-                    seekBarCelsius.progress = celsius
-                    fahrenheittemp.setText(progress.toString() + ".00°")
-                    celsiustemp.setText(celsius.toString() + ".00°")
 
-                    if (celsius <= 20) {
-                        message.setText(R.string.warmer_message)
-                    } else {
-                        message.setText(R.string.colder_message)
+                    if(progress > 32) {
+                        val celsius = (progress - 32) * 5 / 9
+                        seekBarCelsius.progress = celsius
+                        fahrenheittemp.setText(progress.toString() + ".00°")
+                        celsiustemp.setText(celsius.toString() + ".00°")
+
+                        if (celsius <= 20) {
+                            message.setText(R.string.warmer_message)
+                        } else {
+                            message.setText(R.string.colder_message)
+                        }
                     }
 
                 }
             }
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                if (seekBarFahrenheit.progress < 32) {
+                    seekBarFahrenheit.progress = 32
+                    fahrenheittemp.setText(seekBarFahrenheit.progress.toString() + ".00")
+
+                    seekBarCelsius.progress = 0
+                    celsiustemp.setText(seekBarCelsius.progress.toString() + ".00")
+                }
+
+
+            }
         })
 
 
